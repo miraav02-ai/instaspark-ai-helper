@@ -65,7 +65,10 @@ export function AppShell({ children }: { children: ReactNode }) {
           className="group flex items-center gap-2 rounded-full p-1 transition-colors hover:bg-accent/60"
         >
           {session ? (
-            <span className="grid size-9 place-items-center rounded-full bg-primary text-xs font-bold text-primary-foreground">{initials}</span>
+            <>
+              <span className="grid size-9 place-items-center rounded-full bg-primary text-xs font-bold text-primary-foreground">{initials}</span>
+              <span className="max-w-28 truncate pr-2 text-sm font-semibold text-foreground">{session.name}</span>
+            </>
           ) : (
             <span className="grid size-9 place-items-center rounded-full border border-border bg-muted text-foreground transition-colors group-hover:bg-accent">
               <UserRound className="size-4" />
